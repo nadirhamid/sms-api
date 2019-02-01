@@ -22,7 +22,7 @@ class Semaphore extends Collection
 		]);
 	}
 
-	public function send( $recipient, string $message )
+	public function send( $recipient, $message )
 	{
 		if (!is_array($recipient) && !is_numeric($recipient)) {
 			throw new Exception("Invalid supplied recipient number");	
@@ -47,7 +47,7 @@ class Semaphore extends Collection
 		return $this->fire();
 	}
 
-	public function priority( int $recipient, string $message )
+	public function priority( $recipient, $message )
 	{
 		$this->segment = 'priority';
 		$this->parameters('query', [
@@ -66,7 +66,7 @@ class Semaphore extends Collection
 		return $this->fire()->reverse()->values();
 	}
 
-	public function message( int $id )
+	public function message( $id )
 	{
 		$this->segment = 'messages/' . $id;
 
@@ -80,7 +80,7 @@ class Semaphore extends Collection
 		return $this->fire();
 	}
 
-	public function transactions( int $limit = null, int $page = null )
+	public function transactions( $limit = null, $page = null )
 	{
 		$this->segment = 'account/transactions';
 		$this->parameters('query', [
@@ -91,7 +91,7 @@ class Semaphore extends Collection
 		return $this->fire();
 	}
 	
-	public function sendernames( int $limit = null, int $page = null )
+	public function sendernames( $limit = null, $page = null )
 	{
 		$this->segment = 'account/sendernames';
 		$this->parameters('query', [
@@ -102,7 +102,7 @@ class Semaphore extends Collection
 		return $this->fire();
 	}
 
-	public function users( int $limit = null, int $page = null )
+	public function users( $limit = null, $page = null )
 	{
 		$this->segment = 'account/users';
 		$this->parameters('query', [
