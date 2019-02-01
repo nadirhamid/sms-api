@@ -1,5 +1,5 @@
 {
-	"name": "codehub/sms-api",
+	"name": "nadirhamid/sms-api",
 	"type": "library",
 	"description": "A Library for PHP SMS API (Semaphore)",
 	"keywords": ["semaphore", "sms", "sms-api"],
